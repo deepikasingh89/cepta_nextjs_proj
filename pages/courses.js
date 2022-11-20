@@ -1,6 +1,4 @@
 import React from "react";
-import Styles from "../styles/Courses.module.css";
-import Image from 'next/image';
 export const getStaticProps = async () => {
   //api calls
   // return {

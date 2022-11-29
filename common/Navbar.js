@@ -1,24 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import style from "../styles/Header.module.css";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
     <div className="row bg-info bg-opacity-50">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          {/* <a class="navbar-brand" href="#">Navbar</a> */}
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul
               className={[
@@ -40,6 +29,12 @@ const Navbar = () => {
               </li>
               <li className={[style.nav_link, "nav-item"].join(" ")}>
                 <Link href="/contact">Contact</Link>
+              </li>
+              <li className={[style.nav_link, "nav-item"].join(" ")}>
+                <Link href="/batches">Batches</Link>
+              </li>
+              <li className={[style.nav_link, "nav-item"].join(" ")}>
+                <Link href="/products">Products</Link>
               </li>
             </ul>
           </div>

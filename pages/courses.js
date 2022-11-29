@@ -1,10 +1,11 @@
 import React from "react";
+//SSg-ststaic site generation.
 export const getStaticProps = async () => {
   //api calls
   // return {
   //   props: { footerStatus: false },
   // };
-   const response = await fetch("https://fakestoreapi.com/products");
+  const response = await fetch("https://fakestoreapi.com/products");
   const data = await response.json(); //to convert stringfy json to parsed json
   return {
     props: { productData: data },

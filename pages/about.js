@@ -4,7 +4,7 @@ import Footer from "../common/Footer";
 import Navbar from "../common/Navbar";
 import Image from 'next/image';
 import Head from 'next/head';
-import styles from "../styles/About.module.css";
+import styles from "../styles/About.module.scss";
 const about = () =>{
     return (
       <>

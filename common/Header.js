@@ -1,17 +1,15 @@
 import React from "react";
+import Logo from "./Head1";
+import Head2 from "./Head2";
+import Head3 from "./Head3";
 
 const Header = () => {
   return (
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <h3>ShopNz</h3>
-        </a>
-      </div>
+    <div className="row bg-light d-flex justify-content-center align-items-center">
+      <Logo />
+      <Head2 />
+      <Head3 />
     </div>
-    // <div className="row bg-success bg-opacity-50">
-    //   <h2>Header</h2>
-    // </div>
   );
 };
 

@@ -7,7 +7,7 @@ const Layout = (props) => {
   const {children,footerStatus} =props;
   console.log("footerStatus", footerStatus);
   return (
-    <div className="container">
+    <div className="container-xxl">
       <Header/>
       <Navbar/>
         {children}

@@ -4,7 +4,7 @@ import styles from "../styles/Courses.module.css";
 
 export const getStaticProps = async () => {
   //api calls
-  const response = await fetch("https://fakestoreapi.com/products");
+  const response = await fetch(process.env.API_URL);
   const data = await response.json(); //to convert stringfy json to parsed json
   return {
     props: { productData: data },

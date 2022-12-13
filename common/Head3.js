@@ -23,7 +23,7 @@ const Head3 = () => {
         </li>
         <li className="float-left d-inline-block m-3">
           <button type="button" className="btn btn-outline-info">
-            <Link href="/login" className="">
+            <Link href="/registration" className="">
               Register
             </Link>
           </button>

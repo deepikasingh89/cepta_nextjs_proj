@@ -1,22 +1,67 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
 const Login = () => {
+
+  const [formdata, setFormdata] = useState({});
+  const [submitStatus, setSubmitStatus] = useState({});
+  //   const registerFn = async () => {
+  const router = useRouter();
+
+  const loginFn = async () => {
+    console.log("formdata", formdata);
+
+    const url = "http://localhost:3000/api/users/login";
+    try{
+       const response = await axios.post(url, formdata);
+       if (response.data.userid) {
+        // setSubmitStatus(true);
+         router.push("/products");
+       }
+    }catch(err){
+      setSubmitStatus(true);
+    }
+   
+  };
+
+  const handleChange = (e) => {
+    let tempObj = {};
+    tempObj[e.target.name] = e.target.value;
+    setFormdata({ ...formdata, ...tempObj });
+  };
+
   return (
     <div className="row justify-content-center align-items-center">
-      {/* <form> */}
+      {submitStatus && (
+        <div class="alert alert-success" role="role">
+          Form Submitted.
+        </div>
+      )}
       <div className="col-sm-6 card mt-3">
         <div class="col-sm-6form-outline mt-3 mb-4">
           <label class="form-label" for="form2Example1">
             Email address
           </label>
-          <input type="email" id="form2Example1" class="form-control" />
+          <input
+            type="email"
+            id="form2Example1"
+            class="form-control"
+            name="email"
+            onChange={handleChange}
+          />
         </div>
 
         <div class="form-outline mb-4">
           <label class="form-label" for="form2Example2">
             Password
           </label>
-          <input type="password" id="form2Example2" class="form-control" />
+          <input
+            type="password"
+            id="form2Example2"
+            class="form-control"
+            name="password"
+            onChange={handleChange}
+          />
         </div>
 
         <div class="row mb-4">
@@ -41,7 +86,11 @@ const Login = () => {
           </div>
         </div>
 
-        <button type="button" class="btn btn-primary btn-block mb-4">
+        <button
+          type="button"
+          class="btn btn-primary btn-block mb-4"
+          onClick={loginFn}
+        >
           Sign in
         </button>
         {/* </form> */}
